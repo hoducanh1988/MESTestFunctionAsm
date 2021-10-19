@@ -1,0 +1,345 @@
+﻿<UserControl x:Class="EW12C.UserCtrl.ucManual"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EW12C.UserCtrl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+
+    <UserControl.Resources>
+
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="#cbd6d5"/>
+            <EventSetter Event="Click" Handler="Button_Click"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="5,0,0,0"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Background" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Background" Value="#e1f2b8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+        
+        
+    </UserControl.Resources>
+    
+    <Border BorderBrush="#777777" BorderThickness="1,1,1,1">
+        <TabControl Margin="5" TabStripPlacement="Left">
+
+            <!--check serial number-->
+            <TabItem x:Name="tab_SerialNumber">
+                <TabItem.Header>
+                    <Label Content="Write Serial Number" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+
+                <Border BorderBrush="#777777" BorderThickness="0,0,0,0">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Label Foreground="Red" FontWeight="SemiBold" Content="Write Serial Number"/>
+                            <WrapPanel Height="25">
+                                <TextBox IsEnabled="False" Text="{Binding Path=StampSerialNumber, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button IsEnabled="False" Tag="write_serial_number" Margin="10,0,0,0" Content="Write"/>
+                            </WrapPanel>
+
+                            <Label Margin="0,10,0,0" Foreground="Red" FontWeight="SemiBold" Content="Read Serial Number"/>
+                            <Button Tag="read_serial_number" Margin="5,0,0,0" Content="Read"/>
+                            <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=MeshSerialNumber, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        </StackPanel>
+
+                        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                        <ScrollViewer Grid.Row="2" x:Name="Scr_SerialNumber">
+                            <RichTextBox IsReadOnly="True" Margin="0,0,1,2" Padding="5,5,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding Path=LogSSH, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
+
+                    </Grid>
+                </Border>
+                
+                
+                
+            </TabItem>
+
+            <!--check mac address-->
+            <TabItem x:Name="tab_MacAddress">
+                <TabItem.Header>
+                    <Label Content="Check MAC" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+
+                <Border BorderBrush="#777777" BorderThickness="0,0,0,0">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Button Margin="5,0,0,0" Tag="read_mac_address" Content="Read"/>
+                            <WrapPanel>
+                                <Label Width="100" Content="Mac Ethernet:"/>
+                                <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=MacEthernet, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                            <WrapPanel>
+                                <Label Width="100" Content="Mac wlan 2G:"/>
+                                <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=MacWlan2G, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                            <WrapPanel>
+                                <Label Width="100" Content="Mac wlan 5G:"/>
+                                <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=MacWlan5G, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                        </StackPanel>
+
+                        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                        <ScrollViewer Grid.Row="2" x:Name="Scr_Mac">
+                            <RichTextBox IsReadOnly="True" Margin="0,0,1,2" Padding="5,5,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding Path=LogSSH, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
+
+                    </Grid>
+                </Border>
+            </TabItem>
+
+            <!--check firmware-->
+            <TabItem x:Name="tab_Firmware">
+                <TabItem.Header>
+                    <Label Content="Check Firmware" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+
+                <Border BorderBrush="#777777" BorderThickness="0,0,0,0">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Button Tag="read_firmware_info" Margin="5,0,0,0" Content="Read"/>
+                            <WrapPanel>
+                                <Label Width="100" Content="Version:"/>
+                                <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=FirmwareVersion, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                            <WrapPanel>
+                                <Label Width="100" Content="Build time:"/>
+                                <TextBlock Padding="5,0,0,0" TextWrapping="Wrap" FontSize="13" FontWeight="SemiBold" Foreground="Blue" Text="{Binding Path=FirmwareBuildTime, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                        </StackPanel>
+
+                        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                        <ScrollViewer Grid.Row="2" x:Name="Scr_Firmware">
+                            <RichTextBox IsReadOnly="True" Margin="0,0,1,2" Padding="5,5,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding Path=LogSSH, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
+
+                    </Grid>
+                </Border>
+            </TabItem>
+
+            <!--check hardware version-->
+            <TabItem x:Name="tab_Hardware">
+                <TabItem.Header>
+                    <Label Content="Check Hardware" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+
+                <Border BorderBrush="#777777" BorderThickness="0,0,0,0">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Button Tag="read_hardware_version" Margin="5,0,0,0" Content="Read"/>
+                            <WrapPanel>
+                                <Label Width="100" Content="Version:"/>
+                                <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=HardwareVersion, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                        </StackPanel>
+
+                        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                        <ScrollViewer Grid.Row="2" x:Name="Scr_Hardware">
+                            <RichTextBox IsReadOnly="True" Margin="0,0,1,2" Padding="5,5,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding Path=LogSSH, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
+
+                    </Grid>
+                </Border>
+            </TabItem>
+
+            <!--check model number-->
+            <TabItem x:Name="tab_ModelNumber">
+                <TabItem.Header>
+                    <Label Content="Check Model" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+
+                <Border BorderBrush="#777777" BorderThickness="0,0,0,0">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Button Tag="read_model_number" Margin="5,0,0,0" Content="Read"/>
+                            <WrapPanel>
+                                <Label Width="100" Content="Model number:"/>
+                                <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=ModelNumber, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                        </StackPanel>
+
+                        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                        <ScrollViewer Grid.Row="2" x:Name="Scr_Model">
+                            <RichTextBox IsReadOnly="True" Margin="0,0,1,2" Padding="5,5,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding Path=LogSSH, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
+
+                    </Grid>
+                </Border>
+            </TabItem>
+
+            <!--check wan port-->
+            <TabItem x:Name="tab_Wan">
+                <TabItem.Header>
+                    <Label Content="Check Wan" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+
+                <Border BorderBrush="#777777" BorderThickness="0,0,0,0">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Button Tag="read_ethernet_speed" Margin="5,0,0,0" Content="Read"/>
+                            <WrapPanel>
+                                <Label Width="100" Content="Speed (MB):"/>
+                                <Label FontWeight="SemiBold" Foreground="Blue" Content="{Binding Path=EthernetSpeed, UpdateSourceTrigger=PropertyChanged}"/>
+                            </WrapPanel>
+                            <Button Tag="ping_ethernet" Margin="5,20,0,0" Content="Ping"/>
+                        </StackPanel>
+
+                        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                        <ScrollViewer Grid.Row="2" x:Name="Scr_Wan">
+                            <RichTextBox IsReadOnly="True" Margin="0,0,1,2" Padding="5,5,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding Path=LogSSH, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
+
+                    </Grid>
+                </Border>
+
+            </TabItem>
+
+            <!--check led-->
+            <TabItem x:Name="tab_Led">
+                <TabItem.Header>
+                    <Label Content="Check Led" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+
+                <Border BorderBrush="#777777" BorderThickness="0,0,0,0">
+                    <Grid Margin="5,5,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="3"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0">
+                            <Button Tag="wan_ledgreen_on" Margin="5,0,0,0" Content="Green"/>
+                            <Button Visibility="Collapsed" Tag="wan_ledyellow_on" Margin="5,10,0,0" Content="Yellow"/>
+                            <Button Tag="wan_ledred_on" Margin="5,10,0,0" Content="Red"/>
+                            <Button Tag="wan_led_off" Margin="5,10,0,0" Content="Off"/>
+                        </StackPanel>
+
+                        <GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+                        <ScrollViewer Grid.Row="2" x:Name="Scr_Led">
+                            <RichTextBox IsReadOnly="True" Margin="0,0,1,2" Padding="5,5,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <FlowDocument>
+                                    <Paragraph>
+                                        <Run Text="{Binding Path=LogSSH, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Paragraph>
+                                </FlowDocument>
+                            </RichTextBox>
+                        </ScrollViewer>
+
+                    </Grid>
+                </Border>
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header>
+                    <Label Content="Check Button" FontWeight="SemiBold" FontSize="13"/>
+                </TabItem.Header>
+            </TabItem>
+
+        </TabControl>
+    </Border>
+    
+</UserControl>

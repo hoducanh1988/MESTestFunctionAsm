@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeshTestFunctionAsm", "MeshTestFunctionAsm\MeshTestFunctionAsm.csproj", "{89B6DFAD-6530-4E90-8084-81069244DE1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EW12S", "EW12S\EW12S.csproj", "{96BA685D-CB98-48B4-BB96-57212BDE9F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EW12CG", "EW12CG\EW12CG.csproj", "{D72138F7-62F3-4272-99FE-23B7170E7C88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EW12SG", "EW12SG\EW12SG.csproj", "{405C27EA-0AF6-4A9B-A042-F0F93EAF8EBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EW12C", "EW12C\EW12C.csproj", "{15CCD26F-1285-4A0F-B096-C5176E8011A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EW30SX", "EW30SX\EW30SX.csproj", "{1A47D1FE-C6B2-482F-9F3B-18DEB4D372CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89B6DFAD-6530-4E90-8084-81069244DE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B6DFAD-6530-4E90-8084-81069244DE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B6DFAD-6530-4E90-8084-81069244DE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B6DFAD-6530-4E90-8084-81069244DE1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96BA685D-CB98-48B4-BB96-57212BDE9F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BA685D-CB98-48B4-BB96-57212BDE9F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BA685D-CB98-48B4-BB96-57212BDE9F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BA685D-CB98-48B4-BB96-57212BDE9F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72138F7-62F3-4272-99FE-23B7170E7C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72138F7-62F3-4272-99FE-23B7170E7C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72138F7-62F3-4272-99FE-23B7170E7C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72138F7-62F3-4272-99FE-23B7170E7C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{405C27EA-0AF6-4A9B-A042-F0F93EAF8EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{405C27EA-0AF6-4A9B-A042-F0F93EAF8EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{405C27EA-0AF6-4A9B-A042-F0F93EAF8EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{405C27EA-0AF6-4A9B-A042-F0F93EAF8EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CCD26F-1285-4A0F-B096-C5176E8011A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CCD26F-1285-4A0F-B096-C5176E8011A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CCD26F-1285-4A0F-B096-C5176E8011A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CCD26F-1285-4A0F-B096-C5176E8011A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A47D1FE-C6B2-482F-9F3B-18DEB4D372CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A47D1FE-C6B2-482F-9F3B-18DEB4D372CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A47D1FE-C6B2-482F-9F3B-18DEB4D372CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A47D1FE-C6B2-482F-9F3B-18DEB4D372CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {194F904F-C2D9-4CF5-924E-2E9A1253F8A9}
+	EndGlobalSection
+EndGlobal

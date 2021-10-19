@@ -1,0 +1,31 @@
+﻿<SettingInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Factory>1</Factory>
+  <LineCode>1</LineCode>
+  <StationName>-</StationName>
+  <StationNumber>1</StationNumber>
+  <WorkOrder>#12345</WorkOrder>
+  <Operator>Nguyen Van A</Operator>
+  <IPAddress>192.168.88.1</IPAddress>
+  <SshUser>root</SshUser>
+  <SshPassword>vnpt</SshPassword>
+  <MacHeader>A06518:A4F4C2:D49AA0</MacHeader>
+  <VnptMacCode>A06518=2,A4F4C2=3,D49AA0=4</VnptMacCode>
+  <FirmwareVersion>EW12XG000F0001</FirmwareVersion>
+  <HardwareVersion>EW12CG000H0001</HardwareVersion>
+  <ModelNumber>EW12CG</ModelNumber>
+  <SpeedEthernet>1000</SpeedEthernet>
+  <FileProduct>Product_Ver2.csv</FileProduct>
+  <ProductName>EW12CG</ProductName>
+  <ProductNumber>125</ProductNumber>
+  <ProductColor>X</ProductColor>
+  <IsLoginSSH>true</IsLoginSSH>
+  <IsWriteAndValidateSerialNumber>true</IsWriteAndValidateSerialNumber>
+  <IsValidateMacAddress>true</IsValidateMacAddress>
+  <IsValidateFirmwareVersion>true</IsValidateFirmwareVersion>
+  <IsValidateHardwareVersion>true</IsValidateHardwareVersion>
+  <IsValidateModelNumber>true</IsValidateModelNumber>
+  <IsValidateWanPort>true</IsValidateWanPort>
+  <IsValidateLed>true</IsValidateLed>
+  <IsValidateButton>true</IsValidateButton>
+  <LogDirectory>D:\LOGDATA</LogDirectory>
+</SettingInformation>
